@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.gekaradchenko.weatherappwithkotlin.todayweather.TodayWeatherViewModel" />
+
+        <variable
+            name="weatherModel"
+            type="com.gekaradchenko.weatherappwithkotlin.WeatherModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/todayWeatherFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".todayweather.TodayWeatherFragment">
+
+        <TextView
+            android:id="@+id/nowPlaceTextView"
+            style="@style/TextViewWeathersFragment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:text="@{viewModel.timeZone}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/todayDateTextView" />
+
+        <TextView
+            android:id="@+id/nowCoordinateTextView"
+            style="@style/TextViewWeathersFragment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:text="@{viewModel.location}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nowPlaceTextView" />
+
+        <TextView
+            android:id="@+id/nowTempTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:text="@{viewModel.temp}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/nowWeatherImageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nowCoordinateTextView" />
+
+        <TextView
+            android:id="@+id/todayDateTextView"
+            style="@style/TextViewWeathersFragment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:text="@{viewModel.dayToday}"
+            android:textSize="@dimen/text_weather_fragment_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/nowWeatherImageView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:src="@drawable/clounds"
+            app:imageSet="@{viewModel.icon}"
+            app:layout_constraintBottom_toTopOf="@+id/nowHumidityTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nowTempTextView" />
+
+        <TextView
+            android:id="@+id/nowHumidityTextView"
+            style="@style/TextViewWeathersFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@{viewModel.humid}"
+            app:layout_constraintBottom_toTopOf="@+id/nowWindSpeedTextView"
+            app:layout_constraintStart_toStartOf="@+id/nowWindSpeedTextView"
+            app:layout_constraintTop_toBottomOf="@+id/nowWeatherImageView" />
+
+        <TextView
+            android:id="@+id/nowWindSpeedTextView"
+            style="@style/TextViewWeathersFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:text="@{viewModel.wildSpeed}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nowHumidityTextView" />
+
+        <TextView
+            android:id="@+id/nowTimeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="@{viewModel.timeNow}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nowWindSpeedTextView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

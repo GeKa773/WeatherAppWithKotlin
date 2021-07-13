@@ -1,0 +1,74 @@
+<resources>
+    <string name="app_name">WeatherAppWithKotlin</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="second_fragment_text_1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum semper ac justo nec dictum. Pellentesque accumsan congue venenatis. Nunc consectetur sit amet ante sit amet porta. Praesent lacinia libero a lectus posuere, et hendrerit enim convallis. Curabitur blandit sem lectus, id interdum eros molestie vitae. Nulla facilisi. Vivamus maximus euismod nulla a venenatis. Integer metus nunc, pretium sed feugiat sed, congue et purus. Maecenas non nisi eu urna volutpat tincidunt sed at turpis. Nulla sem nulla, condimentum eu cursus in, sollicitudin non purus. Nulla mollis metus ac tortor fringilla, non posuere dolor viverra. Fusce congue elementum quam, ut dapibus mauris tempor at. Donec rutrum sit amet ante sit amet iaculis. Curabitur et porttitor est.</string>
+    <string name="second_fragment_text_2">Duis commodo porttitor dui. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Maecenas in urna odio. Morbi nec consequat enim. Vivamus ullamcorper mattis dui ut suscipit. Nulla pellentesque, erat at convallis vulputate, ipsum ante iaculis quam, non fringilla mauris nisl ut erat. Ut hendrerit dapibus justo ac vulputate. Aenean in diam tincidunt, tincidunt est non, faucibus sem.</string>
+    <string name="second_fragment_text_3">Suspendisse mattis orci sed sem placerat, vitae pellentesque nisl mattis. Morbi laoreet at nisi at placerat. Quisque molestie, elit vitae consequat mattis, metus tortor tempor lacus, sed laoreet tortor erat a risus. Etiam at quam a risus volutpat congue. Vivamus nibh ligula, tincidunt eu eleifend hendrerit, porta nec dolor. Nullam in tortor nec lacus efficitur aliquam in at odio. Suspendisse nec ante lorem.</string>
+
+
+    <string name="theme">Theme:</string>
+    <string name="night_mode">Night mode</string>
+    <string name="notification">Notification:</string>
+    <string name="show_alerts">Show alerts</string>
+    <string name="very_hot">Very hot</string>
+    <string name="snow">Snow</string>
+    <string name="hot">Hot</string>
+    <string name="language_text_view">Language:</string>
+    <string name="language">English</string>
+    <string name="english">English</string>
+    <string name="russian">Russian</string>
+    <string name="information">Information:</string>
+    <string name="button_temp">Temp</string>
+    <string name="button_humid">Humid</string>
+    <string name="drag_item">Drag item below and vice versa</string>
+    <string name="button_wind">Wind</string>
+    <string name="button_date">Date</string>
+
+
+    <string name="today">Today</string>
+    <string name="tomorrow">Tomorrow</string>
+
+    <string name="humidity">Humidity: </string>
+    <string name="wind_speed">Wind speed: </string>
+    <string name="m_c">m/s</string>
+    <string name="now">Now</string>
+    <string name="hour">Hour</string>
+    <string name="hours">Hours</string>
+
+    <string name="monday">Monday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="thursday">Thursday</string>
+    <string name="friday">Friday</string>
+    <string name="saturday">Saturday</string>
+    <string name="sunday">Sunday</string>
+
+    <string name="write_location_here">write location here</string>
+    <string name="add_location">ADD LOCATION</string>
+    <string name="swipe_to_remove">Swipe to remove</string>
+    <string name="next_tip">next tip</string>
+    <string name="go_to_the_app">GO TO THE APP</string>
+
+    <string name="quick">Quick</string>
+    <string name="stable">Stable</string>
+    <string name="beautiful">Beautiful</string>
+
+    <string name="title_dialog">There is INFORMATION</string>
+    <string name="text_dialog">Suspendisse quis nisi id ante ullamcorper convallis. Donec eu purus condimentum, rutrum tellus in, porttitor ligula. Aliquam ultrices neque elit, sit amet suscipit est imperdiet vel. Ut sit amet enim vehicula, semper urna sed, tempus elit. Aliquam convallis placerat ex, et hendrerit ipsum auctor quis. Etiam vestibulum mollis lectus at mattis. Mauris justo ligula, mattis sit amet facilisis ut, vulputate a dolor.</string>
+    <string name="privacy_policy">PRIVACY POLICY</string>
+    <string name="term_of_using">TERM OF USING</string>
+
+    <string name="home_weather_bottom">Home weather</string>
+    <string name="location_bottom">Location</string>
+    <string name="Setting_bottom">Setting</string>
+
+
+
+
+
+
+
+
+</resources>

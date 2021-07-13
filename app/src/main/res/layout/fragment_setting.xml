@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".setting.SettingFragment">
+
+    <TextView
+        android:id="@+id/themeSettingTextView"
+        style="@style/TitleTextViewSettingStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:text="@string/theme"
+        app:layout_constraintBottom_toTopOf="@+id/nightModeSettingSwitch"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Switch
+        android:id="@+id/nightModeSettingSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/notificationsSettingTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/themeSettingTextView" />
+
+    <TextView
+        style="@style/TextViewSettingStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/night_mode"
+        app:layout_constraintBottom_toBottomOf="@+id/nightModeSettingSwitch"
+        app:layout_constraintStart_toEndOf="@+id/nightModeSettingSwitch"
+        app:layout_constraintTop_toTopOf="@+id/nightModeSettingSwitch" />
+
+    <TextView
+        android:id="@+id/notificationsSettingTextView"
+        style="@style/TitleTextViewSettingStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:text="@string/notification"
+        app:layout_constraintBottom_toTopOf="@+id/mainLinearLayoutSetting"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nightModeSettingSwitch" />
+
+    <LinearLayout
+        android:id="@+id/mainLinearLayoutSetting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/languageChangeSettingTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/notificationsSettingTextView">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Switch
+                android:id="@+id/settingSwitch1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/settingFoSwitchTextView1"
+                style="@style/TextViewSettingStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/show_alerts" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Switch
+                android:id="@+id/settingSwitch2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/settingFoSwitchTextView2"
+                style="@style/TextViewSettingStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/very_hot" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Switch
+                android:id="@+id/settingSwitch3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/settingFoSwitchTextView3"
+                style="@style/TextViewSettingStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/snow" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Switch
+                android:id="@+id/settingSwitch4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/settingFoSwitchTextView4"
+                style="@style/TextViewSettingStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/hot" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/languageChangeSettingTextView"
+        style="@style/TitleTextViewSettingStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:text="@string/language_text_view"
+        app:layout_constraintBottom_toTopOf="@+id/languageSettingTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mainLinearLayoutSetting" />
+
+    <TextView
+        android:id="@+id/languageSettingTextView"
+        style="@style/TextViewSettingStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:clickable="true"
+        android:text="@string/language"
+        app:layout_constraintBottom_toTopOf="@+id/informationSettingTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/languageChangeSettingTextView" />
+
+    <TextView
+        android:id="@+id/informationSettingTextView"
+        style="@style/TitleTextViewSettingStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:text="@string/information"
+        app:layout_constraintBottom_toTopOf="@+id/tempSettingButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/languageSettingTextView" />
+
+    <Button
+        android:id="@+id/tempSettingButton"
+        style="@style/ButtonSettingStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:background="@drawable/button_setting_fragment"
+        android:drawableLeft="@drawable/ic_baseline_star"
+        android:text="@string/button_temp"
+        android:textAllCaps="false"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toTopOf="@+id/dragSettingTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/informationSettingTextView" />
+
+    <Button
+        android:id="@+id/humidSettingButton"
+        style="@style/ButtonSettingStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:background="@drawable/button_setting_fragment"
+        android:drawableLeft="@drawable/ic_baseline_star"
+        android:text="@string/button_humid"
+        android:textAllCaps="false"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="@+id/tempSettingButton"
+        app:layout_constraintStart_toEndOf="@+id/tempSettingButton"
+        app:layout_constraintTop_toTopOf="@+id/tempSettingButton" />
+
+    <TextView
+        android:id="@+id/dragSettingTextView"
+        style="@style/TitleTextViewSettingStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="@string/drag_item"
+        app:layout_constraintBottom_toTopOf="@+id/windSettingButton"
+        app:layout_constraintEnd_toStartOf="@+id/drawImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tempSettingButton" />
+
+    <Button
+        android:id="@+id/windSettingButton"
+        style="@style/ButtonSettingStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:background="@drawable/button_setting_fragment"
+        android:drawableLeft="@drawable/ic_baseline_star"
+        android:text="@string/button_wind"
+        android:textAllCaps="false"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dragSettingTextView" />
+
+    <Button
+        android:id="@+id/dateSettingButton"
+        style="@style/ButtonSettingStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:background="@drawable/button_setting_fragment"
+        android:drawableLeft="@drawable/ic_baseline_star"
+        android:text="@string/button_date"
+        android:textAllCaps="false"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="@+id/windSettingButton"
+        app:layout_constraintStart_toEndOf="@+id/windSettingButton"
+        app:layout_constraintTop_toTopOf="@+id/windSettingButton" />
+
+    <ImageView
+        android:id="@+id/drawImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:src="@drawable/ic_baseline_north_24"
+        app:layout_constraintBottom_toBottomOf="@+id/dragSettingTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dragSettingTextView"
+        app:layout_constraintTop_toTopOf="@+id/dragSettingTextView" />
+
+    <ImageView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_south_24"
+        app:layout_constraintBottom_toBottomOf="@+id/dragSettingTextView"
+        app:layout_constraintEnd_toEndOf="@+id/drawImage"
+        app:layout_constraintStart_toStartOf="@+id/drawImage"
+        app:layout_constraintTop_toTopOf="@+id/dragSettingTextView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

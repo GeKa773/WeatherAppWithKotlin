@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_weather_graph"
+    app:startDestination="@id/todayWeatherFragment">
+
+    <fragment
+        android:id="@+id/todayWeatherFragment"
+        android:name="com.gekaradchenko.weatherappwithkotlin.todayweather.TodayWeatherFragment"
+        android:label="fragment_today_weather"
+        tools:layout="@layout/fragment_today_weather" >
+        <action
+            android:id="@+id/action_todayWeatherFragment_to_weekWeatherFragment"
+            app:destination="@id/weekWeatherFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/locationFragment"
+        android:name="com.gekaradchenko.weatherappwithkotlin.addlocation.AddLocationFragment"
+        android:label="fragment_location"
+        tools:layout="@layout/fragment_add_location" />
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.gekaradchenko.weatherappwithkotlin.setting.SettingFragment"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_setting" />
+    <fragment
+        android:id="@+id/weekWeatherFragment"
+        android:name="com.gekaradchenko.weatherappwithkotlin.weekweather.WeekWeatherFragment"
+        android:label="WeekWeatherFragment" >
+        <action
+            android:id="@+id/action_weekWeatherFragment_to_todayWeatherFragment"
+            app:destination="@id/todayWeatherFragment" />
+    </fragment>
+</navigation>

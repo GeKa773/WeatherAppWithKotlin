@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/button_setting_fragment_color_default" />
+    <padding
+        android:bottom="@dimen/padding_button_setting_fragment"
+        android:left="@dimen/padding_button_setting_fragment"
+        android:right="@dimen/padding_button_setting_fragment"
+        android:top="@dimen/padding_button_setting_fragment" />
+    <corners
+        android:radius="@dimen/radius_button_setting_fragment"/>
+</shape>
