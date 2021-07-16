@@ -13,7 +13,7 @@
 
         <variable
             name="weatherModel"
-            type="com.gekaradchenko.weatherappwithkotlin.WeatherModel" />
+            type="com.gekaradchenko.weatherappwithkotlin.network.WeatherModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

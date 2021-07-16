@@ -1,4 +1,4 @@
-package com.gekaradchenko.weatherappwithkotlin
+package com.gekaradchenko.weatherappwithkotlin.network
 
 data class WeatherModel(
     val current: Current,

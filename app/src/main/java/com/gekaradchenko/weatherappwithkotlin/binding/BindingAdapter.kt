@@ -1,4 +1,4 @@
-package com.gekaradchenko.weatherappwithkotlin
+package com.gekaradchenko.weatherappwithkotlin.binding
 
 import android.widget.ImageView
 import android.widget.TextView
