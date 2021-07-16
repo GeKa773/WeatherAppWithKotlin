@@ -11,20 +11,25 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.gekaradchenko.weatherappwithkotlin.database.Location
+import com.gekaradchenko.weatherappwithkotlin.database.LocationDao
 import com.karumi.dexter.Dexter
 import com.karumi.dexter.PermissionToken
 import com.karumi.dexter.listener.PermissionDeniedResponse
 import com.karumi.dexter.listener.PermissionGrantedResponse
 import com.karumi.dexter.listener.PermissionRequest
 import com.karumi.dexter.listener.single.PermissionListener
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
+import kotlinx.coroutines.*
 
-class AddLocationViewModel(application: Application) : AndroidViewModel(application) {
+class AddLocationViewModel(val database: LocationDao, application: Application) :
+    AndroidViewModel(application) {
     val app = application
     private val viewModelJob = Job()
     private val coroutineScope = CoroutineScope(viewModelJob + Dispatchers.Main)
+
+
+    val locations = database.getAllLocation()
+
 
     val uri: Uri = Uri.fromParts("package", app.packageName, "")
 
@@ -33,6 +38,14 @@ class AddLocationViewModel(application: Application) : AndroidViewModel(applicat
         get() = _isPermissionGranter
 
 
+    fun deleteLocation(location: Location) {
+        coroutineScope.launch {
+
+            withContext(Dispatchers.IO) {
+                database.deleteLocation(location)
+            }
+        }
+    }
 
 
     fun myCheckPermission() {

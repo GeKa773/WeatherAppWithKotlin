@@ -19,6 +19,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.gekaradchenko.weatherappwithkotlin.R;
+import com.gekaradchenko.weatherappwithkotlin.WeatherActivity;
+import com.gekaradchenko.weatherappwithkotlin.database.Location;
+import com.gekaradchenko.weatherappwithkotlin.database.LocationDao;
+import com.gekaradchenko.weatherappwithkotlin.database.LocationDatabase;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.maps.CameraUpdate;
@@ -68,8 +72,6 @@ public class AddLocationActivity extends AppCompatActivity implements OnMapReady
         addLocationButton = findViewById(R.id.addLocationButton);
 
 
-
-
         myCheckPermission();
 
         if (isPermissionGranter) {
@@ -89,10 +91,10 @@ public class AddLocationActivity extends AppCompatActivity implements OnMapReady
                 try {
                     getLatLng();
 
-                } catch (Exception e){
+                } catch (Exception e) {
 
                 }
-              //  startActivity(new Intent(AddLocationActivity.this, WeatherActivity.class));
+                startActivity(new Intent(AddLocationActivity.this, WeatherActivity.class));
 
             }
 
@@ -114,7 +116,13 @@ public class AddLocationActivity extends AppCompatActivity implements OnMapReady
                                     public void run() {
                                         googleMap.addMarker(markerOptions);
                                         googleMap.animateCamera(cameraUpdate);
-                                        insertLocationToDB();
+                                        new Thread(new Runnable() {
+                                            @Override
+                                            public void run() {
+                                                insertLocationToDB();
+
+                                            }
+                                        }).start();
                                     }
                                 });
                             }
@@ -130,7 +138,8 @@ public class AddLocationActivity extends AppCompatActivity implements OnMapReady
             }
 
             private void insertLocationToDB() {
-                //locationWeatherFragmentViewModel.insertLocation(new Location(0,addressList.get(0).getLatitude(),addressList.get(0).getLongitude()));
+                LocationDao database = LocationDatabase.Companion.getInstance(getApplication()).getLocationDao();
+                database.insertLocation(new Location(0, addressList.get(0).getLatitude(), addressList.get(0).getLongitude()));
             }
 
             private String getCity() {

@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.gekaradchenko.weatherappwithkotlin.R
+import com.gekaradchenko.weatherappwithkotlin.database.LocationDatabase
 import com.gekaradchenko.weatherappwithkotlin.databinding.FragmentAddLocationBinding
 import com.gekaradchenko.weatherappwithkotlin.locationmap.AddLocationActivity
 import com.karumi.dexter.Dexter
@@ -27,9 +28,7 @@ import com.karumi.dexter.listener.single.PermissionListener
 
 class AddLocationFragment : Fragment() {
 
-    private val viewModel: AddLocationViewModel by lazy {
-        ViewModelProvider(this).get(AddLocationViewModel::class.java)
-    }
+
     var isPermissionGranter: Boolean? = null
 
     override fun onCreateView(
@@ -40,6 +39,13 @@ class AddLocationFragment : Fragment() {
         val binding: FragmentAddLocationBinding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_add_location, container, false)
 
+        val application = requireNotNull(this.activity).application
+        val dataSource = LocationDatabase.getInstance(application).locationDao
+
+        val viewModelFactory = AddLocationViewModelFactory(dataSource, application)
+
+        val viewModel =
+            ViewModelProvider(this, viewModelFactory).get(AddLocationViewModel::class.java)
 
         binding.locationButton.setOnClickListener {
 
