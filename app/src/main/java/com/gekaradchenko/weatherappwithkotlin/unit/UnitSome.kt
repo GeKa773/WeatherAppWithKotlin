@@ -1,14 +1,24 @@
 package com.gekaradchenko.weatherappwithkotlin.unit
 
+import android.Manifest
 import android.app.Application
 import android.app.Dialog
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
+import android.provider.Settings
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
+import androidx.core.content.ContextCompat.startActivity
 import com.gekaradchenko.weatherappwithkotlin.R
+import com.karumi.dexter.Dexter
+import com.karumi.dexter.PermissionToken
+import com.karumi.dexter.listener.PermissionDeniedResponse
+import com.karumi.dexter.listener.PermissionGrantedResponse
+import com.karumi.dexter.listener.PermissionRequest
+import com.karumi.dexter.listener.single.PermissionListener
 import java.text.SimpleDateFormat
-import java.time.format.DateTimeFormatter
 import java.util.*
 
 
@@ -167,5 +177,9 @@ object UnitSome {
         humid: Double,
         windSpeed: Double,
     ): String = "${getTemp(temp)}/${humid}%/${windSpeed}${app.getString(R.string.m_c)}"
+
+
+
+
 
 }
